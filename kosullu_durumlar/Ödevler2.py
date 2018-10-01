@@ -64,12 +64,12 @@ else:
 
 #problem4
 """
-print("""
+print('''
 Hangi geometrik şeklin tipini bulmak istiyorsunuz? 
 
 Üçgen için 3;
 Dörtgen için 4 yazınız.
-""")
+''')
 şekil=int(input("Şekil:"))
 
 if(şekil==3):
