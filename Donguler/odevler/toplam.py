@@ -12,6 +12,7 @@ while True:
     if(sayi=="q"):
         print(toplam)
         print("Çıkış yapılıyor...")
+        break
     else:
         sayi=int(sayi)
         toplam += sayi
