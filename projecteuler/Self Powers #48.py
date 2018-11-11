@@ -1,4 +1,3 @@
-
 limit = int(input("Put the Limit (1000 for project Euler):"))
 list1=[]
 
@@ -11,10 +10,4 @@ sum=str(sum)
 list2=list(reversed(sum))
 
 
-print('''
-*****
-Numbers are sorted from bottom to top
-*****
-''')
-for i in range(0,10):
-    print(list2[i])
+print(list2[-10:])
