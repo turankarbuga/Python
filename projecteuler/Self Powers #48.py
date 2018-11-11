@@ -7,7 +7,7 @@ for i in range(1,limit+1):
 
 sum=sum(list1)
 sum=str(sum)
-list2=list(reversed(sum))
+list2=list(sum)
 
 
 print(list2[-10:])
