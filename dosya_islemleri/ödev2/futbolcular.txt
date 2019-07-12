@@ -1,0 +1,14 @@
+Fernando Muslera,Galatasaray
+Atiba Hutchinson,Beşiktaş
+Simon Kjaer,Fenerbahçe
+Volkan Demirel,Fenerbahçe
+Vida,Beşiktaş
+Victor Moses,Fenerbahçe
+Hasan Ali Kaldırım,Fenerbahçe
+Diagne,Galatasaray
+Emre Akbaba,Galatasaray
+Burak Yılmaz,Beşiktaş
+Quaresma,Beşiktaş
+Nagatomo,Galatasaray
+Mehmet Ekici,Fenerbahçe
+Loris Karius,Beşiktaş
