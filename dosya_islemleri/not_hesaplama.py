@@ -1,3 +1,5 @@
+#update1 kalanları ve geçenleri ayıran kodlar eklendi. ayrı bir dosyaya yazılır. ödev1
+
 
 def not_hesapla(satir):
 
@@ -10,8 +12,24 @@ def not_hesapla(satir):
     not3=int(liste[3])
 
     son_not=not1 * (3/10) + not2 * (3/10) + not3 * (2/5)
-    son_not=str(son_not)
+    liste2=[]
+    liste2.append(son_not)
+    for j in liste2:
+        if(j>=60):
+            file3=open("gecenler.txt","a",encoding="utf-8")
+            file3.write(isim+"\n")
+            file3.close()
+        else:
+            file4=open("kalanlar.txt","a",encoding="utf-8")
+            file4.write(isim+"\n")
+            file4.close()
 
+
+
+
+
+
+    son_not=str(son_not)
     return isim + "--->" + son_not + "\n"
 
 
@@ -26,6 +44,14 @@ with open("dosya.txt","r",encoding="utf-8") as file:
 
         for i in eklenecekler_listesi:
             file2.write(i)
+
+
+
+
+
+
+
+
 
 
 
