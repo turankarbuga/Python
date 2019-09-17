@@ -20,7 +20,7 @@ for prime_num in nums:
     if count == 0:
         primes.append(prime_num)
 
-print(primes)
+print(primes[-1])
 
 
 
