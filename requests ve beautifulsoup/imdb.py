@@ -17,7 +17,7 @@ ratingler = soup.find_all("td",{"class":"ratingColumn imdbRating"})
 
 
 for baslik,rating in zip(basliklar,ratingler):
-    baslik = baslik.texts
+    baslik = baslik.text
     rating = rating.text
 
     baslik = baslik.strip()
