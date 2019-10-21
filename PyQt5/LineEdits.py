@@ -36,9 +36,6 @@ class Window(QtWidgets.QWidget):
             print(self.input.text())
 
 
-
-
-
 app = QtWidgets.QApplication(sys.argv)
 window = Window()
 sys.exit(app.exec_())
