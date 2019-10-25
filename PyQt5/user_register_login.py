@@ -1,6 +1,11 @@
+"""
+it checks that there is any space in username.
+it checks the password's length. if it is shorter than 6 characters it gives warning.
+"""
+
 import sys
 import sqlite3
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets,QtGui
 
 
 class Window(QtWidgets.QWidget):
@@ -10,6 +15,7 @@ class Window(QtWidgets.QWidget):
         self.set_connect()
 
         self.init_ui()
+        
     def set_connect(self):
 
         con = sqlite3.connect("database.db")
@@ -24,6 +30,16 @@ class Window(QtWidgets.QWidget):
         self.label = QtWidgets.QLabel("")
         self.button_login = QtWidgets.QPushButton("Login")
         self.button_register = QtWidgets.QPushButton("Register")
+
+        self.labelUserName = QtWidgets.QLabel(self)
+        self.labelUserName.setText("Username:")
+        self.labelUserName.setFont(QtGui.QFont("Times",10))
+        self.labelUserName.move(40,10)
+
+        self.labelPassword = QtWidgets.QLabel(self)
+        self.labelPassword.setText("Password:")
+        self.labelPassword.setFont(QtGui.QFont("Times",10))
+        self.labelPassword.move(40,37)
 
         self.setGeometry(300,300,400,300)
         self.setWindowTitle("Log in")
@@ -82,6 +98,16 @@ class Register_window(QtWidgets.QWidget):
         self.regButton = QtWidgets.QPushButton("Register")
         self.regLabel = QtWidgets.QLabel("")
 
+        self.regLabeluserName = QtWidgets.QLabel(self)
+        self.regLabeluserName.setText("Username:")
+        self.regLabeluserName.setFont(QtGui.QFont("Times",10))
+        self.regLabeluserName.move(40,10)
+
+        self.regLabelPassword = QtWidgets.QLabel(self)
+        self.regLabelPassword.setText("Password:")
+        self.regLabelPassword.setFont(QtGui.QFont("Times",10))
+        self.regLabelPassword.move(40,37)
+
         v_box = QtWidgets.QVBoxLayout()
         v_box.addWidget(self.regUserName)
         v_box.addWidget(self.regPassword)
@@ -100,9 +126,16 @@ class Register_window(QtWidgets.QWidget):
         self.show()
 
     def regButton_clicked(self):
-        self.cursor.execute("Insert Into users VALUES(?,?)",(self.regUserName.text(),self.regPassword.text()))
-        self.con.commit()
-        self.regLabel.setText("Succeed")
+
+        if " " in self.regUserName.text():
+            self.regLabel.setText("Please do not use space \nin your username.")
+        elif len(self.regPassword.text()) < 6:
+            self.regLabel.setText("Your password must have \nat least 6 characters.")
+
+        else:
+            self.cursor.execute("Insert Into users VALUES(?,?)", (self.regUserName.text(), self.regPassword.text()))
+            self.con.commit()
+            self.regLabel.setText("Succeed")
 
 
 app = QtWidgets.QApplication(sys.argv)
