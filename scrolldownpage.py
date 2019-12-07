@@ -14,7 +14,7 @@ while(match==False):
 
 jscommand = """
 followers_list = document.querySelector("div[role = 'dialog'] ul") # select div
-followers_list.scrollTo(0, follows_list.scrollHeight); 
+followers_list.scrollTo(0, followers_list.scrollHeight); 
 var lenOfPage=followers_list.scrollHeight;
 return lenOfPage;
 """
